@@ -24,5 +24,17 @@ $(document).ready(function(){
         });
         
       });  
+      function toggleSlide(item) {
+        $(item).each(function(i) {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                $('.catalog-card__content').eq(i).toggleClass('catalog-card__content_active');
+                $('.catalog-card__back').eq(i).toggleClass('catalog-card__back_active');
+            })
+        });
+    };
+
+    toggleSlide('.catalog-card__link');
+    toggleSlide('.catalog-card__linkback')
   });
   
